@@ -1,0 +1,123 @@
+:root {
+  --primary: #d6ab88;
+  --bg: #191919;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: #fff;
+}
+
+/* About Section */
+.about,
+.menu,
+.contact {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+.about .row .content .star {
+  color: gold;
+}
+
+.about .row .content .star2 {
+  color: darksalmon;
+}
+
+.about .row {
+  display: flex;
+  padding: 1.5rem 3rem; 
+}
+
+.about .row .about-img {
+  flex: 1 1 40rem;
+  width: 50%;
+  background-color: #363636;
+  border-radius: 10px;
+}
+
+.about .row .about-img .whatsapp{
+  margin-top: 6%;
+}
+
+.about .row .about-img .whatsapp h5{
+  font-weight: bold;
+}
+
+.about .row .about-img .whatsapp h4{
+  font-weight: bold;
+}
+
+.about .row .about-img img {
+  float: left;
+  width: 54%;
+  margin-left: 2%;
+  margin-top: 2%;
+  border-radius: 10px;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-top: 1%;
+}
+
+.about .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 1rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: #ffd34e;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.about .cta:hover{
+  background-color: #fff;
+}
+
+.about .info a{
+  font-weight: bold;
+}
+
+.about .info a:hover{
+  color: #ffd34e;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.whatsapp{
+  position: relative;
+  align-items: center;  
+}

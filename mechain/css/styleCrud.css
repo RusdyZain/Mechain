@@ -1,0 +1,23 @@
+body {
+  line-height: 1.5;
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+  background: url(../img/banner.jpg) no-repeat;
+  background-size: auto;
+}
+
+tbody{
+    background-color: antiquewhite;
+}
+
+nav{
+    color: white;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container{
+    @media (min-width: 1400px) {
+        max-width: 1441px;
+    }
+}
