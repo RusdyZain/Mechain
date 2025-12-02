@@ -2,6 +2,8 @@
 
 **Mechain** adalah sebuah platform inovatif berbasis web yang membantu para pemilik motor di Mataram menemukan bengkel motor terdekat dan memperoleh panduan perawatan motor secara mandiri. Proyek ini dirancang untuk memberikan kemudahan akses layanan bengkel dan pengetahuan praktis tentang cara merawat motor secara efisien.
 
+Kode sumber aplikasi web ini berada di dalam folder `mechain/` dan terdiri dari kombinasi file **HTML, CSS, JavaScript, PHP**, serta sebuah skema database **MySQL**.
+
 ## Fitur Utama
 
 1. **Pencarian Bengkel Terdekat**  
@@ -26,12 +28,24 @@
 
 - **HTML5, CSS3, dan JavaScript**: Untuk membangun antarmuka yang interaktif dan dinamis.
 - **Bootstrap**: Digunakan untuk desain responsif, memastikan website dapat diakses di berbagai perangkat.
-- **API Map**: Untuk menampilkan lokasi bengkel motor terdekat secara akurat dan real-time.
-- **Database**: Menyimpan informasi bengkel, layanan, dan panduan perawatan motor.
+- **Google Maps Embed / API Map**: Untuk menampilkan lokasi bengkel motor terdekat secara akurat dan real-time pada halaman utama.
+- **PHP**: Digunakan untuk fitur login, manajemen artikel, data bengkel, dan panel pengguna (admin, bengkel, user).
+- **MySQL**: Menyimpan informasi bengkel, layanan, pengguna, dan panduan perawatan motor. Skema database tersedia pada file `mechain/db/mechain_db.sql`.
 
-## Cara Memulai
+## Struktur Proyek
 
-Ikuti langkah-langkah berikut untuk memulai proyek Mechain di lingkungan lokal Anda:
+Struktur folder utama di dalam repositori ini:
+
+- `mechain/index.html` – Halaman landing utama Mechain.
+- `mechain/css/` – Berisi stylesheet (Bootstrap, animasi, dan styling kustom).
+- `mechain/js/` – Berisi file JavaScript pendukung.
+- `mechain/img/`, `mechain/foto/`, `mechain/fonts/` – Berisi aset gambar dan font.
+- `mechain/php/` – Berisi script PHP untuk login, CRUD artikel, bengkel, user, dan fitur-fitur lainnya.
+- `mechain/db/mechain_db.sql` – File SQL untuk membuat database Mechain di MySQL.
+
+## Cara Memulai (Mode Pengembangan Lokal)
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek Mechain di lingkungan lokal Anda:
 
 1. **Clone repositori ini**:
    ```bash
@@ -43,8 +57,22 @@ Ikuti langkah-langkah berikut untuk memulai proyek Mechain di lingkungan lokal A
    cd Mechain
    ```
 
-3. **Jalankan website di browser**:  
-   Buka file `index.html` di browser untuk mulai menggunakan Mechain.
+3. **Siapkan server web lokal (WAMP/XAMPP/Laragon)**:  
+   - Pastikan modul **Apache** dan **MySQL** aktif.  
+   - Salin folder `mechain/` ke dalam folder web server Anda, misalnya `htdocs` (XAMPP) atau `www` (Laragon), sehingga dapat diakses sebagai `http://localhost/mechain/`.
+
+4. **Import database**:
+   - Buka phpMyAdmin atau client MySQL lain.
+   - Buat database baru, misalnya dengan nama `mechain_db`.
+   - Import file `mechain/db/mechain_db.sql` ke dalam database tersebut.
+
+5. **Sesuaikan konfigurasi koneksi database jika diperlukan**:  
+   - Buka file `mechain/php/conn_db/db_conn.php`.  
+   - Pastikan nama host, username, password, dan nama database sesuai dengan pengaturan MySQL lokal Anda.
+
+6. **Jalankan website di browser**:  
+   - Akses `http://localhost/mechain/index.html` untuk membuka halaman utama.  
+   - Fitur login, artikel, dan manajemen bengkel dapat diakses melalui menu yang tersedia di halaman utama.
 
 ## Kontribusi
 

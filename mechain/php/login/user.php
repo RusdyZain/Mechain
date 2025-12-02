@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+$flashError = null;
+$flashMessage = null;
+
+if (isset($_GET['error'])) {
+    $flashError = $_GET['error'];
+}
+
+if (isset($_SESSION['error'])) {
+    $flashError = $_SESSION['error'];
+    unset($_SESSION['error']);
+}
+
+if (isset($_SESSION['message'])) {
+    $flashMessage = $_SESSION['message'];
+    unset($_SESSION['message']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +47,14 @@
         <div class="container b-container" id="b-container">
             <form action="../config/loginUser.php" method="post" class="form" id="b-form">
                 <h2 class="form_title title">Sign in to Website</h2>
-                <?php if (isset($_GET['error'])) { ?>
+                <?php if (!empty($flashError)) { ?>
                     <p class="error">
-                        <?php echo $_GET['error']; ?>
+                        <?php echo htmlspecialchars($flashError, ENT_QUOTES, 'UTF-8'); ?>
+                    </p>
+                <?php } ?>
+                <?php if (!empty($flashMessage)) { ?>
+                    <p class="message">
+                        <?php echo htmlspecialchars($flashMessage, ENT_QUOTES, 'UTF-8'); ?>
                     </p>
                 <?php } ?>
                 <input class="form__input" type="text" name="uname" placeholder="User Name">
