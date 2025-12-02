@@ -1,0 +1,22 @@
+# OS / file sistem
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+*.iml
+
+# Dependency manager umum
+vendor/
+node_modules/
+
+# File environment / rahasia
+.env
+.env.*
+mechain/.env
+mechain/.env.*
+
+# Log
+*.log
+

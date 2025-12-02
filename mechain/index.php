@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/php/config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,25 +42,25 @@
                 >
                   <span class="fa fa-bars"></span>
                 </button>
-                <a href="index.html" class="navbar-brand">MECHAIN</a>
+                <a href="<?php echo base_path('index.php'); ?>" class="navbar-brand">MECHAIN</a>
               </div>
               <div class="collapse navbar-collapse navbar-right" id="mynavbar">
                 <ul class="nav navbar-nav">
                   <li class="active">
-                    <a href="http://localhost/mechain/index.html">Home</a>
+                    <a href="<?php echo base_path('index.php'); ?>">Home</a>
                   </li>
                   <li>
-                    <a href="http://localhost/mechain/artikel.php"
+                    <a href="<?php echo base_path('artikel.php'); ?>"
                       >Article</a
                     >
                   </li>
                   <li>
-                    <a href="http://localhost/mechain/index.html#contact"
+                    <a href="<?php echo base_path('index.php#contact'); ?>"
                       >Contact</a
                     >
                   </li>
                   <li class="login">
-                    <a href="http://localhost/mechain/chooseUser.html">Login</a>
+                    <a href="<?php echo base_path('chooseUser.php'); ?>">Login</a>
                   </li>
                 </ul>
               </div>
@@ -73,7 +76,7 @@
             <h4 class="sub-title">Get Your Repair Anywhere</h4>
             <button type="submit" class="btn btn-submit">
               <a
-                href="http://localhost/mechain/chooseUser.html"
+                href="<?php echo base_path('chooseUser.php'); ?>"
                 style="color: #000; text-decoration: none"
                 >Get Repair</a
               >

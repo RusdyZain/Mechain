@@ -35,15 +35,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
                                     <span class="fa fa-bars"></span>
                                 </button>
-                                <a href="index.html" class="navbar-brand">MECHAIN</a>
+                                <a href="<?php echo base_path('index.php'); ?>" class="navbar-brand">MECHAIN</a>
                             </div>
                             <div class="collapse navbar-collapse navbar-right" id="mynavbar">
                                 <ul class="nav navbar-nav">
-                                    <li><a href="http://localhost/mechain/php/users/mechanic.php">Home</a></li>
-                                    <li class="active"><a href="http://localhost/mechain/php/fiturMechanic/registBengkel.php">Regist Bengkel</a></li>
-                                    <li><a href="http://localhost/mechain/php/fiturMechanic/artikel.php">Article</a></li>
-                                    <li><a href="http://localhost/mechain/php/fiturMechanic/location.php">Location</a></li>
-                                    <li><a href="http://localhost/mechain/php/users/mechanic.php#contact">Contact</a></li>
+                                    <li><a href="<?php echo base_path('php/users/mechanic.php'); ?>">Home</a></li>
+                                    <li class="active"><a href="<?php echo base_path('php/fiturMechanic/registBengkel.php'); ?>">Regist Bengkel</a></li>
+                                    <li><a href="<?php echo base_path('php/fiturMechanic/artikel.php'); ?>">Article</a></li>
+                                    <li><a href="<?php echo base_path('php/fiturMechanic/location.php'); ?>">Location</a></li>
+                                    <li><a href="<?php echo base_path('php/users/mechanic.php#contact'); ?>">Contact</a></li>
                                     <li style="padding-left: 30px;"><a>
                                             <a href="../login/logout.php">
                                                 <?php echo $_SESSION['name']; ?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once __DIR__ . '/../config/config.php';
 include "../conn_db/db_conn.php";
 ?>
 
@@ -32,19 +33,19 @@ include "../conn_db/db_conn.php";
                         ?>
                         <span class="nav-item"><?php echo $huruf_pertama; ?></span>
                     </a></li>
-                <li><a href="http://localhost/mechain/php/users/admin.php">
+                <li><a href="<?php echo base_path('php/users/admin.php'); ?>">
                         <i class="fas fa-menorah"></i>
                         <span class="nav-item">Dashboard</span>
                     </a></li>
-                <li><a href="http://localhost/mechain/php/admin/repair.php">
+                <li><a href="<?php echo base_path('php/admin/repair.php'); ?>">
                         <i class="fas fa-pen-to-square"></i>
                         <span class="nav-item">Repair</span>
                     </a></li>
-                <li><a href="http://localhost/mechain/php/admin/bengkel.php">
+                <li><a href="<?php echo base_path('php/admin/bengkel.php'); ?>">
                         <i class="fas fa-chart-bar"></i>
                         <span class="nav-item">Bengkel</span>
                     </a></li>
-                <li><a href="http://localhost/mechain/php/admin/artikel.php">
+                <li><a href="<?php echo base_path('php/admin/artikel.php'); ?>">
                         <i class="fas fa-newspaper"></i>
                         <span class="nav-item">Artikel</span>
                     </a></li>

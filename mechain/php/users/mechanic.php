@@ -37,11 +37,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                             </div>
                             <div class="collapse navbar-collapse navbar-right" id="mynavbar">
                                 <ul class="nav navbar-nav">
-                                    <li class="active"><a href="http://localhost/mechain/php/users/mechanic.php">Home</a></li>
-                                    <li><a href="http://localhost/mechain/php/fiturMechanic/registBengkel.php">Regist Bengkel</a></li>
-                                    <li><a href="http://localhost/mechain/php/fiturMechanic/artikel.php">Article</a></li>
-                                    <li><a href="http://localhost/mechain/php/fiturMechanic/location.php">Location</a></li>
-                                    <li><a href="http://localhost/mechain/php/users/mechanic.php#contact">Contact</a></li>
+                                    <li class="active"><a href="<?php echo base_path('php/users/mechanic.php'); ?>">Home</a></li>
+                                    <li><a href="<?php echo base_path('php/fiturMechanic/registBengkel.php'); ?>">Regist Bengkel</a></li>
+                                    <li><a href="<?php echo base_path('php/fiturMechanic/artikel.php'); ?>">Article</a></li>
+                                    <li><a href="<?php echo base_path('php/fiturMechanic/location.php'); ?>">Location</a></li>
+                                    <li><a href="<?php echo base_path('php/users/mechanic.php#contact'); ?>">Contact</a></li>
                                     <li style="padding-left: 30px;"><a>
                                             <a href="../login/logout.php">
                                                 <?php echo $_SESSION['name']; ?>
@@ -58,7 +58,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                         <h2 class="top-title">REPAIR SHOP MOBILE</h2>
                         <h3 class="title">MECHAIN</h3>
                         <h4 class="sub-title">Get Your Repair Anywhere</h4>
-                        <button type="submit" class="btn btn-submit"><a href="http://localhost/mechain/php/fiturMechanic/registBengkel.php" style="color: #000; text-decoration: none;">Daftar</a></button>
+                        <button type="submit" class="btn btn-submit"><a href="<?php echo base_path('php/fiturMechanic/registBengkel.php'); ?>" style="color: #000; text-decoration: none;">Daftar</a></button>
                     </div>
                 </div>
             </div>

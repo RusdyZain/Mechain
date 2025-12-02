@@ -1,3 +1,6 @@
+<?php
+require_once __DIR__ . '/php/config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,7 +29,7 @@
       <div class="row">
         <div class="column">
           <div class="card">
-            <a href="http://localhost/mechain/php/login/admin.php">
+            <a href="<?php echo base_path('php/login/admin.php'); ?>">
               <div class="icon-wrapper">
                 <i class="fas fa-user-tie"></i>
               </div>
@@ -42,7 +45,7 @@
         </div>
         <div class="column">
           <div class="card">
-            <a href="http://localhost/mechain/php/login/user.php">
+            <a href="<?php echo base_path('php/login/user.php'); ?>">
             <div class="icon-wrapper">
               <i class="fas fa-users"></i>
             </div>
@@ -60,7 +63,7 @@
         </div>
         <div class="column">
           <div class="card">
-            <a href="http://localhost/mechain/php/login/bengkel.php">
+            <a href="<?php echo base_path('php/login/bengkel.php'); ?>">
             <div class="icon-wrapper">
               <i class="fas fa-toolbox"></i>
             </div>

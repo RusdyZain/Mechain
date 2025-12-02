@@ -1,69 +1,89 @@
 @font-face {
 	font-family: "roboto-light";
-	src: url("../fonts/roboto/roboto-light-webfont.woff2") format("woff2"), url("../fonts/roboto/roboto-light-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabWmT.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "roboto-regular";
-	src: url("../fonts/roboto/roboto-regular-webfont.woff2") format("woff2"), url("../fonts/roboto/roboto-regular-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmT.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "roboto-italic";
-	src: url("../fonts/roboto/roboto-italic-webfont.woff2") format("woff2"), url("../fonts/roboto/roboto-italic-webfont.woff") format("woff");
-	font-style: normal;
-	font-weight: normal;
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/roboto/v50/KFOKCnqEu92Fr1Mu53ZEC9_Vu3r1gIhOszmOClHrs6ljXfMMLoHQiA8.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "roboto-medium";
-	src: url("../fonts/roboto/roboto-medium-webfont.woff2") format("woff2"), url("../fonts/roboto/roboto-medium-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmT.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "roboto-bold";
-	src: url("../fonts/roboto/roboto-bold-webfont.woff2") format("woff2"), url("../fonts/roboto/roboto-bold-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammT.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "roboto-black";
-	src: url("../fonts/roboto/roboto-black-webfont.woff2") format("woff2"), url("../fonts/roboto/roboto-black-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 900;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/roboto/v50/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtammT.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "montserrat-regular";
-	src: url("../fonts/montserrat/montserrat-regular-webfont.woff2") format("woff2"), url("../fonts/montserrat/montserrat-regular-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "montserrat-bold";
-	src: url("../fonts/montserrat/montserrat-bold-webfont.woff2") format("woff2"), url("../fonts/montserrat/montserrat-bold-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
-}
-
-@font-face {
-	font-family: "muli-regular";
-	src: url("../fonts/muli/muli-regular-webfont.woff2") format("woff2"), url("../fonts/muli/muli-regular-webfont.woff") format("woff");
-	font-style: normal;
-	font-weight: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf")
+		format("truetype");
 }
 
 @font-face {
 	font-family: "muli-light";
-	src: url("../fonts/muli/muli-light-webfont.woff2") format("woff2"), url("../fonts/muli/muli-light-webfont.woff") format("woff");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFmQkHkw.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "muli-regular";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("https://fonts.gstatic.com/s/muli/v34/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkHkw.ttf")
+		format("truetype");
 }

@@ -1,5 +1,14 @@
 <?php
-include "php/conn_db/db_conn.php" ?>
+include "php/conn_db/db_conn.php";
+
+try {
+    $articleStmt = $conn->query("SELECT * FROM artikel ORDER BY id DESC");
+    $articles = $articleStmt->fetchAll();
+} catch (PDOException $e) {
+    error_log('Failed to load articles: ' . $e->getMessage());
+    $articles = [];
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,14 +44,14 @@ include "php/conn_db/db_conn.php" ?>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
                                 <span class="fa fa-bars"></span>
                             </button>
-                            <a href="index.html" class="navbar-brand">MECHAIN</a>
+                            <a href="<?php echo base_path('index.php'); ?>" class="navbar-brand">MECHAIN</a>
                         </div>
                         <div class="collapse navbar-collapse navbar-right" id="mynavbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="http://localhost/mechain/index.html">Home</a></li>
-                                <li class="active"><a href="http://localhost/mechain/artikel.php">Article</a></li>
-                                <li><a href="http://localhost/mechain/index.html#contact">Contact</a></li>
-                                <li style="padding-left: 30px;"><a href="http://localhost/mechain/chooseUser.html">Login</a>
+                                <li><a href="<?php echo base_path('index.php'); ?>">Home</a></li>
+                                <li class="active"><a href="<?php echo base_path('artikel.php'); ?>">Article</a></li>
+                                <li><a href="<?php echo base_path('index.php#contact'); ?>">Contact</a></li>
+                                <li style="padding-left: 30px;"><a href="<?php echo base_path('chooseUser.php'); ?>">Login</a>
                             </ul>
                         </div>
                     </div>
@@ -124,15 +133,12 @@ include "php/conn_db/db_conn.php" ?>
                     </div> <!-- end entry content -->
                 </div>
 
-                <?php
-                $show = mysqli_query($conn, "SELECT * FROM artikel");
-                while ($resutl = mysqli_fetch_array($show)) {
-                ?>
+                <?php foreach ($articles as $article) { ?>
                     <article class="brick entry format-standard animate-this">
 
                         <div class="entry-thumb">
-                            <a href="<?php echo $resutl['link'] ?>" class="thumb-link">
-                                <img src="foto/<?php echo $resutl['foto'] ?>" alt="building">
+                            <a href="<?php echo htmlspecialchars($article['link'], ENT_QUOTES, 'UTF-8'); ?>" class="thumb-link">
+                                <img src="foto/<?php echo htmlspecialchars($article['foto'], ENT_QUOTES, 'UTF-8'); ?>" alt="Artikel">
                             </a>
                         </div>
 
@@ -140,19 +146,17 @@ include "php/conn_db/db_conn.php" ?>
                             <div class="entry-header">
                                 <div class="entry-meta">
                                     <span class="cat-links">
-                                        <a><?php echo $resutl['penerbit'] ?></a>
+                                        <a><?php echo htmlspecialchars($article['penerbit'], ENT_QUOTES, 'UTF-8'); ?></a>
                                     </span>
                                 </div>
 
-                                <h1 class="entry-title"><a href="<?php echo $resutl['link'] ?>">5
-                                        <?php echo $resutl['judul'] ?></a></h1>
+                                <h1 class="entry-title"><a href="<?php echo htmlspecialchars($article['link'], ENT_QUOTES, 'UTF-8'); ?>">
+                                        <?php echo htmlspecialchars($article['judul'], ENT_QUOTES, 'UTF-8'); ?></a></h1>
 
                             </div>
-                            <div class="entry-excerpt"><?php echo $resutl['redaksi'] ?></div>
+                            <div class="entry-excerpt"><?php echo htmlspecialchars($article['redaksi'], ENT_QUOTES, 'UTF-8'); ?></div>
                     </article> <!-- end article -->
-                <?php
-                }
-                ?>
+                <?php } ?>
             </div> <!-- end wrapper -->
         </div> <!-- end row -->
 
