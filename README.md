@@ -75,10 +75,12 @@ Ikuti langkah-langkah berikut untuk menjalankan proyek Mechain di lingkungan lok
      - `APP_BASE_PATH` → kosongkan jika aplikasi berjalan di root host (`http://localhost:8000`). Isi `/mechain` jika aplikasi berada di subfolder (`http://localhost/mechain`).
      - `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD` → kredensial PostgreSQL lokal Anda.
 
-5. **Import database**:
-   - Gunakan client PostgreSQL (misalnya `psql` atau GUI seperti pgAdmin).
-   - Buat database baru, misalnya dengan nama `mechain_db`.
-   - Import struktur/data dari file `mechain/db/mechain_db.sql` (sesuaikan sintaks jika sebelumnya dibuat untuk MySQL).
+5. **Buat schema database otomatis**:
+   - Dari root repo, jalankan:
+     ```bash
+     php run_migrations.php
+     ```
+   - Script ini akan membuat seluruh tabel dan mengisi data contoh di PostgreSQL sesuai kredensial `.env`. Jika Anda lebih suka mengelola schema secara manual, gunakan `mechain/db/schema_pg.sql` sebagai referensi.
 
 6. **Sesuaikan konfigurasi koneksi database jika diperlukan**:  
    - Buka file `mechain/php/conn_db/db_conn.php`.  

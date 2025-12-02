@@ -10,7 +10,7 @@ require_once __DIR__ . '/php/config/config.php';
     <!-- Font Awesome CDN-->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    <link rel="stylesheet" href="<?php echo base_path('vendor/fontawesome/css/all.min.css'); ?>" />
     />
     <!-- Google Font -->
     <link

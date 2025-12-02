@@ -17,8 +17,7 @@ include "../conn_db/db_conn.php";
     <link rel="stylesheet" href="../../css/styleDashboard.css">
 
     <!-- Font Awesome Cdn Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_path('vendor/fontawesome/css/all.min.css'); ?>" />
 
 </head>
 
@@ -76,9 +75,8 @@ include "../conn_db/db_conn.php";
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `repair`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT * FROM repair ORDER BY id");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td>

@@ -14,8 +14,7 @@ require_once __DIR__ . '/../config/config.php';
 
     <link rel="stylesheet" href="../../css/styleDashboard.css" />
     <!-- Font Awesome Cdn Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_path('vendor/fontawesome/css/all.min.css'); ?>" />
 </head>
 
 <body>
@@ -83,9 +82,8 @@ require_once __DIR__ . '/../config/config.php';
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `mechanic`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            $stmt = $conn->query("SELECT * FROM mechanic ORDER BY id");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td>
@@ -130,9 +128,8 @@ require_once __DIR__ . '/../config/config.php';
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `bengkel`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_assoc($result)) {
+                            $stmt = $conn->query("SELECT id, nama_bengkel, email, nowa AS \"noWA\", servis, alamat_bengkel, waktu_operasi, hari_operasi FROM bengkel ORDER BY id");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td>

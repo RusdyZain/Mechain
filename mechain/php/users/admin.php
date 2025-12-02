@@ -12,8 +12,7 @@ session_start();
     <link rel="icon" type="image/x-icon" href="../../img/MechainLogo.png">
     <link rel="stylesheet" href="../../css/styleDashboard.css" />
     <!-- Font Awesome Cdn Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="<?php echo base_path('vendor/fontawesome/css/all.min.css'); ?>" />
 </head>
 
 <body>
@@ -67,10 +66,8 @@ session_start();
             <div class="user-grid">
                 <div class="user-box">
                     <?php
-                    $sql = "SELECT COUNT(*) AS total_users FROM `admin`";
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_assoc($result);
-                    $totalUsers = $row['total_users'];
+                    $stmt = $conn->query("SELECT COUNT(*) AS total_users FROM admin");
+                    $totalUsers = $stmt->fetchColumn();
                     ?>
 
                     <i class="fas fa-users"></i>
@@ -79,10 +76,8 @@ session_start();
                 </div>
                 <div class="user-box">
                     <?php
-                    $sql = "SELECT COUNT(*) AS total_users FROM `mechanic`";
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_assoc($result);
-                    $totalUsers = $row['total_users'];
+                    $stmt = $conn->query("SELECT COUNT(*) AS total_users FROM mechanic");
+                    $totalUsers = $stmt->fetchColumn();
                     ?>
 
                     <i class="fas fa-users"></i>
@@ -91,10 +86,8 @@ session_start();
                 </div>
                 <div class="user-box">
                     <?php
-                    $sql = "SELECT COUNT(*) AS total_users FROM `users`";
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_assoc($result);
-                    $totalUsers = $row['total_users'];
+                    $stmt = $conn->query("SELECT COUNT(*) AS total_users FROM users");
+                    $totalUsers = $stmt->fetchColumn();
                     ?>
 
                     <i class="fas fa-users"></i>
@@ -119,9 +112,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `mechanic`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT * FROM mechanic");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td><?php echo $row["id"] ?></td>
@@ -156,9 +148,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `bengkel`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT id, nama_bengkel, email, nowa AS \"noWA\" FROM bengkel");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td><?php echo $row["id"] ?></td>
@@ -189,9 +180,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `artikel`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT * FROM artikel");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td>
@@ -225,9 +215,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `repair`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT * FROM repair");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td>
@@ -266,9 +255,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `users`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT * FROM users");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td><?php echo $row["id"] ?></td>
@@ -299,9 +287,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `admin`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT * FROM admin");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td><?php echo $row["id"] ?></td>
@@ -332,9 +319,8 @@ session_start();
                         </thead>
                         <tbody>
                             <?php
-                            $sql = "SELECT * FROM `mechanic`";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            $stmt = $conn->query("SELECT id, username, nohp AS \"noHP\" FROM mechanic");
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                             ?>
                                 <tr>
                                     <td><?php echo $row["id"] ?></td>
